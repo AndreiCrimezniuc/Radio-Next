@@ -1,36 +1,26 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {ReactElement} from "react";
-import {getStationById, getStations} from "../../repository/station/stationRepository";
 import {Station} from "../../model/station";
-import {stat} from "fs";
-
+import {getStations} from "../../api/station/stationAPI";
 
 export function RadioBox(): ReactElement {
-    let stations: Station[] | undefined
+    const [stations, setStations] = useState<Station[]>([])
 
-    getStations().then(responseStations => {
-        stations = responseStations;
-    }).catch(e => {
-        console.log('No such station', e);
-    });
-
-    let renderStations:JSX.Element[] = []
-
-    if (typeof stations !== 'undefined' && stations.length > 0) {
-         renderStations = stations.map(x =>(
-            <div id={x.id}>
-                Name: {x.name}, <br/>
-                <audio controls>
-                    <source src={x.stream} />
-                </audio>
-            </div>))
-    } else {
-         renderStations = [<div> <p> No stations, sry</p></div>]
-    }
+    useEffect(() => {
+        async function fetchData() {
+            const data = await getStations();
+            setStations(data);
+        }
+        fetchData();
+    }, []);
 
     return (
         <div className="radio-box">
-            {renderStations}
+            <ul>
+                {stations.map(station => (
+                    <li key={station.id}>{station.name}</li>
+                ))}
+            </ul>
         </div>
     )
 }
