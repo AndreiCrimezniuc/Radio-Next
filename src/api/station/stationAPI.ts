@@ -26,7 +26,7 @@ export function getStations(): Promise<Station[] | null> {
     })
 }
 
-// export function getStations(): Promise<Station[]> {
+// export function getStations(): Promise<Station[]> { // this one works well, but function above - no
 //     return new Promise((resolve) => {
 //         setTimeout(() => {
 //             const stations: Station[] = [
