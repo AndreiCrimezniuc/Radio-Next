@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47241789-ffb6-4a31-a772-f867496f4210" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/station/stationAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/station/stationAPI.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/radiobox/radiobox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/radiobox/radiobox.tsx" afterDir="false" />
     </list>
