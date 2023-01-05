@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47241789-ffb6-4a31-a772-f867496f4210" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/api/station/stationAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/station/stationAPI.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/radiobox/radiobox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/radiobox/radiobox.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/env.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/env.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/station.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/station.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -16,8 +16,8 @@ export function RadioBox(): ReactElement {
             <p>Hello</p>
             <ul>
                 {stations ? stations.map((x) => (
-                    <li key={x.id}>
-                        <p>Name: {x.name}, <audio src={x.stream}>{x.id}</audio></p>
+                    <li key={x.ID}>
+                        <p>Name: {x.Name}, id: {x.ID}</p>
                     </li>
                 )) : <div>Nothing here</div>}
             </ul>

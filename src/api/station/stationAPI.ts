@@ -13,7 +13,7 @@ export async function getStationById(id: string): Promise<Station> {
 }
 
 export function getStations(): Promise<Station[] | null> {
-    return axios.get(apiUrl + `ru/stations`, {
+    return axios.get(apiUrl + "ru/stations", {
         headers: {
             Accept: 'application/json'
         },

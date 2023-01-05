@@ -1,15 +1,16 @@
 export type Station = {
-    id: string,
-    name: string,
-    site?: string | null,
-    email?: string | null,
-    region?: string | null,
-    city?: string | null,
-    address?: string | null,
-    facebook?: string | null,
-    twitter?: string | null,
-    vk?: string | null,
-    wiki?: string | null,
-    phoneNumber?: string | null,
-    stream: string
+    ID: string,
+    Name: string,
+    Site?: string | null,
+    Email?: string | null,
+    Region?: string | null,
+    City?: string | null,
+    Address?: string | null,
+    Facebook?: string | null,
+    Twitter?: string | null,
+    VK?: string | null,
+    Wiki?: string | null,
+    PhoneNumber?: string | null,
+    Stream: string
 }
+
