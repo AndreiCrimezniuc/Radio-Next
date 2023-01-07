@@ -1,0 +1,12 @@
+.radio{
+    border: black 10px solid;
+    height: 200px;
+    width: 200px;
+}
+
+.box{
+    width: 600px !important;
+    margin-left:500px;
+    margin-right:400px;
+    margin-top: 200px;
+}
