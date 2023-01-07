@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
-import {RadioBox} from "./component/radiobox/radiobox";
+import {RadioContainer} from "./component/radio-container/radio-container";
+
 
 function App() {
     return (
         <div>
-           <RadioBox />
+            {/*<AudioPlayer tracks={tracks}  />*/}
+            { <RadioContainer />}
         </div>
     );
 }
