@@ -12,135 +12,16 @@ export async function getStationById(id: string): Promise<Station> {
     return response.data;
 }
 
-// export function getStations(): Promise<Station[] | null> {
-//     return axios.get(apiUrl + "ru/stations", {
-//         headers: {
-//             Accept: 'application/json'
-//         },
-//     })
-//         .then((res) => {
-//             return res.data
-//         }).catch(e => {
-//         console.log(e)
-//         return null
-//     })
-// }
-
-export function getStations():Station[] {
-    let stations:Station[] = [
-        {
-            Name: "baka",
-            Stream: "baka.com",
-            ID: "123"
+export function getStations(): Promise<Station[] | null> {
+    return axios.get(apiUrl + "ru/stations", {
+        headers: {
+            Accept: 'application/json'
         },
-        {
-            Name: "baka",
-            Stream: "baka.com",
-            ID: "123"
-        },
-        {
-            Name: "baka",
-            Stream: "baka.com",
-            ID: "123"
-        },
-        {
-            Name: "baka",
-            Stream: "baka.com",
-            ID: "123"
-        },
-        {
-            Name: "baka",
-            Stream: "baka.com",
-            ID: "123"
-        },
-        {
-            Name: "baka",
-            Stream: "baka.com",
-            ID: "123"
-        },
-        {
-            Name: "baka",
-            Stream: "baka.com",
-            ID: "123"
-        },
-        {
-            Name: "baka",
-            Stream: "baka.com",
-            ID: "123"
-        },
-        {
-            Name: "baka",
-            Stream: "baka.com",
-            ID: "123"
-        },
-        {
-            Name: "baka",
-            Stream: "baka.com",
-            ID: "123"
-        },
-        {
-            Name: "baka",
-            Stream: "baka.com",
-            ID: "123"
-        },
-        {
-            Name: "baka",
-            Stream: "baka.com",
-            ID: "123"
-        },
-        {
-            Name: "baka",
-            Stream: "baka.com",
-            ID: "123"
-        },
-        {
-            Name: "baka",
-            Stream: "baka.com",
-            ID: "123"
-        },
-        {
-            Name: "baka",
-            Stream: "baka.com",
-            ID: "123"
-        },
-
-        {
-            Name: "baka",
-            Stream: "baka.com",
-            ID: "123"
-        },
-        {
-            Name: "baka",
-            Stream: "baka.com",
-            ID: "123"
-        },
-        {
-            Name: "baka",
-            Stream: "baka.com",
-            ID: "123"
-        },
-        {
-            Name: "baka",
-            Stream: "baka.com",
-            ID: "123"
-        },
-        {
-            Name: "baka",
-            Stream: "baka.com",
-            ID: "123"
-        },
-        {
-            Name: "baka",
-            Stream: "baka.com",
-            ID: "123"
-        },
-        {
-            Name: "baka",
-            Stream: "baka.com",
-            ID: "123"
-        },
-
-    ]
-
-    return stations
+    })
+        .then((res) => {
+            return res.data
+        }).catch(e => {
+        console.log(e)
+        return null
+    })
 }

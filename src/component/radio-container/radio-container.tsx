@@ -3,20 +3,17 @@ import {Station} from "../../model/station";
 import {getStations} from "../../api/station/stationAPI";
 import './radio-container.css'
 import 'bootstrap/dist/css/bootstrap.css';
+import {Controls} from "../controls/controls";
 
 export function RadioContainer(): ReactElement {
     const [stations, setStations] = useState<Station[] | null>(null);
-
-    // useEffect(() => {
-    //     getStations().then(rep =>
-    //         setStations(rep)
-    //     )
-    // }, []);
-
+    const [globalPlayStatus, setGlobalPlayStatus] = useState(false)
 
     useEffect(() => {
-        setStations(getStations())
-    })
+        getStations().then(rep =>
+            setStations(rep)
+        )
+    }, []);
 
     return (
         <div className="container box">
@@ -25,7 +22,7 @@ export function RadioContainer(): ReactElement {
                     <div key={x.ID} className="col radio">
                         <p>Name: {x.Name}, id: {x.ID} </p>
                         <div>
-                            <p><audio controls src={x.Stream}> H</audio></p>
+                            <Controls globalPlayStatus={globalPlayStatus} station={x}/>
                         </div>
                     </div>
                 )) : <div>Nothing here</div>}
