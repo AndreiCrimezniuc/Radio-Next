@@ -1,22 +1,22 @@
 import {ReactElement, useState} from "react";
-import {PlayControlProps} from "./play-controls-types";
+import {PlayControlProps, PlayStatus} from "./play-controls-types";
 import {ReactComponent as Pause} from "../../assets/pause.svg";
 import {ReactComponent as Play} from "../../assets/play.svg";
 
-function AudioControls(): ReactElement {
-    const [isPlaying, setIsPlaying] = useState(false)
-
-    function onPlayPauseClick() {
-        setIsPlaying(!isPlaying)
+function AudioControls(playProps: PlayControlProps): ReactElement {
+    function onPlayPauseClick(status: boolean) {
+        playProps.changeGlobalPlayStatus(status)
     }
+
+    const [localPlayStatus, setLocalPlaystatus] = useState(false)
 
     return (
         <div className="audio-controls">
-            {isPlaying ? (
+            {playProps.isPlaying ? (
                 <button
                     type="button"
                     className="pause"
-                    onClick={() => onPlayPauseClick()}
+                    onClick={() => onPlayPauseClick(false)}
                     aria-label="Pause"
                 >
                     <Pause/>
@@ -25,7 +25,7 @@ function AudioControls(): ReactElement {
                 <button
                     type="button"
                     className="play"
-                    onClick={() => onPlayPauseClick()}
+                    onClick={() => onPlayPauseClick(true)}
                     aria-label="Play"
                 >
                     <Play/>
@@ -39,7 +39,7 @@ function AudioControls(): ReactElement {
 export function Controls(props: PlayControlProps): ReactElement {
     return (
         <div>
-            <AudioControls />
+            <AudioControls changeGlobalPlayStatus={props.changeGlobalPlayStatus} isPlaying={props.isPlaying}/>
 
             {/*<Backdrop*/}
             {/*    trackIndex={trackIndex}*/}

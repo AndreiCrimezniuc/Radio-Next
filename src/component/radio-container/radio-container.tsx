@@ -22,7 +22,7 @@ export function RadioContainer(): ReactElement {
                     <div key={x.ID} className="col radio">
                         <p>Name: {x.Name}, id: {x.ID} </p>
                         <div>
-                            <Controls globalPlayStatus={globalPlayStatus} station={x}/>
+                            <Controls isPlaying={globalPlayStatus} station={x} changeGlobalPlayStatus={setGlobalPlayStatus}/>
                         </div>
                     </div>
                 )) : <div>Nothing here</div>}

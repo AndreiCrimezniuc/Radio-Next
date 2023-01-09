@@ -1,10 +1,11 @@
 import {Station} from "../../model/station";
 
-export type PlayControlProps = {
-    station: Station
-    globalPlayStatus: boolean
+export interface PlayControlProps  {
+    station?: Station
+    isPlaying: boolean
+    changeGlobalPlayStatus: CallableFunction
 }
 
-export type PlayStatus = {
-    isPlaying: boolean,
+export interface PlayStatus {
+    isPlaying: boolean
 }
