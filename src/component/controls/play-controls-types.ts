@@ -2,7 +2,7 @@ import {Station} from "../../model/station";
 
 export interface PlayControlProps  {
     station?: Station
-    isPlaying: boolean
+    isPlaying: number
     changeGlobalPlayStatus: CallableFunction
 }
 

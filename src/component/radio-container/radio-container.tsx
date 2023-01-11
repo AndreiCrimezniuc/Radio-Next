@@ -7,7 +7,7 @@ import {Controls} from "../controls/controls";
 
 export function RadioContainer(): ReactElement {
     const [stations, setStations] = useState<Station[] | null>(null);
-    const [globalPlayStatus, setGlobalPlayStatus] = useState(false)
+    const [globalPlayStatus, setGlobalPlayStatus] = useState(-1)
 
     useEffect(() => {
         getStations().then(rep =>

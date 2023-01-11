@@ -1,14 +1,15 @@
-import {ReactElement, useState} from "react";
+import {ReactElement, useState, useEffect} from "react";
 import {PlayControlProps} from "./play-controls-types";
 import {ReactComponent as Pause} from "../../assets/pause.svg";
 import {ReactComponent as Play} from "../../assets/play.svg";
 
 function AudioControls(playProps: PlayControlProps): ReactElement {
-    function onPlayPauseClick(status: boolean) {
-        setLocalPlayStatus(!localPlayStatus)
-    }
-    // how to manipulate with global state to react correct behavior?
     const [localPlayStatus, setLocalPlayStatus] = useState(false)
+
+    function onPlayPauseClick() {
+        setLocalPlayStatus(!localPlayStatus)
+        playProps.changeGlobalPlayStatus(Number(playProps.station?.ID))
+    }
 
     return (
         <div className="audio-controls">
@@ -16,7 +17,7 @@ function AudioControls(playProps: PlayControlProps): ReactElement {
                 <button
                     type="button"
                     className="pause"
-                    onClick={() => onPlayPauseClick(true)}
+                    onClick={() => onPlayPauseClick()}
                     aria-label="Pause"
                 >
                     <Pause/>
@@ -25,7 +26,7 @@ function AudioControls(playProps: PlayControlProps): ReactElement {
                 <button
                     type="button"
                     className="play"
-                    onClick={() => onPlayPauseClick(false)}
+                    onClick={() => onPlayPauseClick()}
                     aria-label="Play"
                 >
                     <Play/>
