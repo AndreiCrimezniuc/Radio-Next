@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47241789-ffb6-4a31-a772-f867496f4210" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/component/header/header.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/header/header.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/radio-container/BackDrop.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/controls/controls.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/controls/controls.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/controls/play-controls-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/controls/play-controls-types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/radio-container/radio-container.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/radio-container/radio-container.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/radio-container/radio-container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/radio-container/radio-container.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,9 +25,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="CSS File" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -53,6 +59,12 @@
     &quot;ts.external.directory.path&quot;: &quot;/home/nokogiriwatir/projects/radio-ui/node_modules/typescript/lib&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets/header" />
+      <recent name="$PROJECT_DIR$/src/assets" />
+    </key>
+  </component>
   <component name="RunManager" selected="JavaScript Debug.WORKTS">
     <configuration name="Unnamed" type="ChromiumRemoteDebugType" factoryName="Chromium Remote" nameIsGenerated="true" port="9229">
       <method v="2" />

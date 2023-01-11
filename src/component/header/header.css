@@ -1,0 +1,16 @@
+.shape-outer {
+    display: flex;
+    flex-shrink: 0;
+    height: calc(150px + 4vw);
+    width: calc(1500px + 4vw);
+    margin: 0px;
+    background-image: linear-gradient(to bottom right, #ff3cac, #562b7c, #2b86c5);
+}
+
+.shape-inner {
+    height: calc(130px + 4vw);
+    width: calc(130px + 4vw);
+    /*background: url("../../assets/header/header.png") no-repeat center;*/
+    background-size: cover;
+    margin: 0;
+}

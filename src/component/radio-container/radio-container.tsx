@@ -7,7 +7,7 @@ import {Controls} from "../controls/controls";
 
 export function RadioContainer(): ReactElement {
     const [stations, setStations] = useState<Station[] | null>(null);
-    const [globalPlayStatus, setGlobalPlayStatus] = useState(-1)
+    const [globalPlayStatus, setGlobalPlayStatus] = useState('no')
 
     useEffect(() => {
         getStations().then(rep =>
@@ -20,9 +20,10 @@ export function RadioContainer(): ReactElement {
             <div className="row row-cols-4">
                 {stations ? stations.map((x) => (
                     <div key={x.ID} className="col radio">
-                        <p>Name: {x.Name}, id: {x.ID} </p>
+                        <p>{x.Name} </p>
                         <div>
-                            <Controls isPlaying={globalPlayStatus} station={x} changeGlobalPlayStatus={setGlobalPlayStatus}/>
+                            <Controls isPlaying={globalPlayStatus} station={x}
+                                      changeGlobalPlayStatus={setGlobalPlayStatus}/>
                         </div>
                     </div>
                 )) : <div>Nothing here</div>}

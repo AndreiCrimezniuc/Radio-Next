@@ -1,23 +1,39 @@
-import {ReactElement, useState, useEffect} from "react";
+import {ReactElement, useEffect, useRef, useState} from "react";
 import {PlayControlProps} from "./play-controls-types";
 import {ReactComponent as Pause} from "../../assets/pause.svg";
 import {ReactComponent as Play} from "../../assets/play.svg";
 
+function playPauseAction(playProps: PlayControlProps, localPlayStatus: boolean, audioRef: React.MutableRefObject<HTMLAudioElement>) {
+    if (playProps.isPlaying === playProps.station?.ID && localPlayStatus) {
+        audioRef.current.play()
+    } else {
+        audioRef.current.pause()
+    }
+}
+
 function AudioControls(playProps: PlayControlProps): ReactElement {
     const [localPlayStatus, setLocalPlayStatus] = useState(false)
 
-    function onPlayPauseClick() {
-        setLocalPlayStatus(!localPlayStatus)
-        playProps.changeGlobalPlayStatus(Number(playProps.station?.ID))
+    function onPlayPauseClick(state: boolean) {
+        playProps.changeGlobalPlayStatus(playProps.station?.ID)
+        setLocalPlayStatus(state)
+
+        playPauseAction(playProps, localPlayStatus, audioRef)
     }
+
+    useEffect(() => {
+        playPauseAction(playProps, localPlayStatus, audioRef);
+    })
+
+    const audioRef = useRef(new Audio(playProps.station?.Stream));
 
     return (
         <div className="audio-controls">
-            {localPlayStatus ? (
+            {localPlayStatus && (playProps.isPlaying === playProps.station?.ID) ? (
                 <button
                     type="button"
                     className="pause"
-                    onClick={() => onPlayPauseClick()}
+                    onClick={() => onPlayPauseClick(false)}
                     aria-label="Pause"
                 >
                     <Pause/>
@@ -26,7 +42,7 @@ function AudioControls(playProps: PlayControlProps): ReactElement {
                 <button
                     type="button"
                     className="play"
-                    onClick={() => onPlayPauseClick()}
+                    onClick={() => onPlayPauseClick(true)}
                     aria-label="Play"
                 >
                     <Play/>
@@ -40,7 +56,8 @@ function AudioControls(playProps: PlayControlProps): ReactElement {
 export function Controls(props: PlayControlProps): ReactElement {
     return (
         <div>
-            <AudioControls changeGlobalPlayStatus={props.changeGlobalPlayStatus} isPlaying={props.isPlaying}/>
+            <AudioControls station={props.station} changeGlobalPlayStatus={props.changeGlobalPlayStatus}
+                           isPlaying={props.isPlaying}/>
 
             {/*<Backdrop*/}
             {/*    trackIndex={trackIndex}*/}
